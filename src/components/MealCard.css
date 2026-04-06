@@ -1,0 +1,160 @@
+.meal-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meal-card--ambitious {
+  border-left: 4px solid #7c3aed;
+}
+
+.meal-card--leftover {
+  border-left: 4px solid #059669;
+}
+
+.meal-card--fast {
+  border-left: 4px solid #2563eb;
+}
+
+.meal-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meal-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meal-card__slot-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.meal-card__effort {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.meal-card__effort--ambitious {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.meal-card__effort--leftover {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.meal-card__effort--fast {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.meal-card__swap-btn {
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+  color: #374151;
+  transition: background 0.15s;
+}
+
+.meal-card__swap-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.meal-card__swap-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.meal-card__name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.meal-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.meal-card__detail {
+  font-size: 0.85rem;
+  color: #374151;
+  display: flex;
+  gap: 4px;
+}
+
+.meal-card__detail-label {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.meal-card__notes {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.meal-card__produces {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.meal-card__expand-btn {
+  font-size: 0.85rem;
+  background: none;
+  border: none;
+  color: #059669;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.meal-card__leftover-ideas {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meal-card__leftover-idea {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.meal-card__leftover-idea strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #111827;
+}
+
+.meal-card__leftover-idea p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.5;
+}
