@@ -1,14 +1,23 @@
 import { useState, useEffect } from 'react';
+import LZString from 'lz-string';
 import './ShareView.css';
 
-// Encode the full plan into the URL hash
+// Encode the full plan into the URL hash (compressed)
 function encodePlan(payload) {
   const json = JSON.stringify(payload);
-  return btoa(encodeURIComponent(json));
+  return LZString.compressToEncodedURIComponent(json);
 }
 
-// Decode plan from URL hash (used when Ryan opens the link)
+// Decode plan from URL hash — supports both compressed (new) and uncompressed (old) links
 export function decodePlan(hash) {
+  // Try compressed format first
+  try {
+    const json = LZString.decompressFromEncodedURIComponent(hash);
+    if (json) return JSON.parse(json);
+  } catch {
+    // fall through
+  }
+  // Fallback: old uncompressed format
   try {
     const json = decodeURIComponent(atob(hash));
     return JSON.parse(json);
